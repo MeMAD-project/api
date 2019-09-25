@@ -1,0 +1,1 @@
+http://data.memad.eu/sparql-endpoint

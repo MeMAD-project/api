@@ -1,0 +1,26 @@
+{
+  "proto": {
+    "id": "?_program_iri",
+    "title": "$ebucore:title$required",
+    "duration": "$ebucore:duration",
+    "genre": "$ebucore:hasGenre",
+    "theme": "$ebucore:hasTheme",
+    "keyword": "$ebucore:hasKeyword",
+    "date": "?date",
+    "channel": {
+      "id": "?channel",
+      "name": "$ebucore:publicationChannelName$required"
+    }
+
+
+  },
+  "$where": [
+    "?pubevent a ebucore:PublicationEvent",
+    "?channel a ebucore:PublicationChannel",
+    "?pubevent ebucore:hasPublicationStartDateTime ?date",
+    "?pubevent ebucore:publishes ?_program_iri; ebucore:isReleasedBy ?channel"
+  ],
+  "$prefixes": {
+    "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+  }
+}
