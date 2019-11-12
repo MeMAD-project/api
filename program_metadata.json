@@ -1,0 +1,32 @@
+{
+  "proto":
+    {
+      "uri": "$uri",
+      "identifier" : "?_identifier",
+      "title" : "$ebucore:title$required",
+      "description": "$ebucore:description",
+      "episodeNumber" : "$ebucore:episodeNumber",
+      "tags": "$ebucore:hasKeyword",
+      "genre": "$ebucore:hasGenre",
+      "theme": "$ebucore:hasTheme",
+      "languages" : "$ebucore:hasLanguage",
+      "mainTitle" : "$ebucore:mainTitle",
+      "workingTitle" : "$ebucore:workingTitle",
+      "theme" : "$ebucore:hasTheme",
+      "producer":"$ebucore:hasProducer",
+      "publicationChannel" : "$ebucore:hasPublicationHistory / ebucore:hasPublicationEvent / ebucore:isReleasedBy / ebucore:publicationChannelName",
+      "firstPublicationTime" : "?startDateTime"
+    },
+  "$where": [
+    "$uri ebucore:hasIdentifier ?_identifier",
+    "?program ebucore:hasPublicationHistory / ebucore:hasPublicationEvent ?firstrun."
+    "?firstrun a memad:FirstRun; ebucore:publicationStartDateTime ?startDateTime."
+    /* FILTER (lang(?title) != 'se') */
+  ],
+  "$prefixes": {
+      "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+  },
+  "grlc": {
+    "summary": "Program Metadata API for Flow",
+  }
+}

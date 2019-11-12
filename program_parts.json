@@ -1,0 +1,23 @@
+{
+  "proto": {
+    "part_uri": "$part",
+    "part_id": "$ebucore:hasIdentifier",
+    "title": "$ebucore:title$required$bestlang",
+    "duration": "$ebucore:duration",
+    "description": "$ebucore:description",
+    "lead": "$memad:lead",
+    "end": "$ebucore:end",
+    "keyword": "$ebucore:hasKeyword",
+    "genre": "$ebucore:hasGenre",
+  },
+  "$where": [
+    "$uri ebucore:hasIdentifier ?_identifier; ebucore:hasPart ?part",
+    "?part ebucore:start ?startTime",
+  ],
+  "$prefixes": {
+    "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+  },
+  "grlc": {
+    "summary": "List of parts for a given program.",
+  }
+}
