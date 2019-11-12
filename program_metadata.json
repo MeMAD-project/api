@@ -16,9 +16,9 @@
       "firstPublicationTime" : "?startDateTime"
     },
   "$where": [
-    "?uri ebucore:hasIdentifier ?_identifier.",
-    "?uri ebucore:hasPublicationHistory / ebucore:hasPublicationEvent ?firstrun.",
-    "?firstrun a memad:FirstRun; ebucore:publicationStartDateTime ?startDateTime."
+    "?uri ebucore:hasIdentifier ?_identifier",
+    "?uri ebucore:hasPublicationHistory / ebucore:hasPublicationEvent ?firstrun",
+    "?firstrun a memad:FirstRun; ebucore:publicationStartDateTime ?startDateTime"
   ],
   "$prefixes": {
       "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#",
