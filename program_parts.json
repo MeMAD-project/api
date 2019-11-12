@@ -1,23 +1,25 @@
 {
   "proto": {
-    "part_uri": "$part",
+    "part_uri": "?part$anchor",
     "part_id": "$ebucore:hasIdentifier",
-    "title": "$ebucore:title$required$bestlang",
-    "duration": "$ebucore:duration",
+    "title": "$ebucore:title",
+    "duration": "$ebucore:duration$required",
     "description": "$ebucore:description",
     "lead": "$memad:lead",
     "end": "$ebucore:end",
     "keyword": "$ebucore:hasKeyword",
-    "genre": "$ebucore:hasGenre",
+    "genre": "$ebucore:hasGenre"
   },
   "$where": [
-    "$uri ebucore:hasIdentifier ?_identifier; ebucore:hasPart ?part",
-    "?part ebucore:start ?startTime",
+    "?uri ebucore:hasIdentifier ?_identifier; ebucore:hasPart ?part",
+    "?part ebucore:start ?startTime"
   ],
+  "$filter": "lang(?title) != 'se'",
   "$prefixes": {
-    "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+    "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#",
+    "memad": "http://data.memad.eu/ontology#"
   },
   "grlc": {
-    "summary": "List of parts for a given program.",
+    "summary": "List of parts for a given program."
   }
 }
