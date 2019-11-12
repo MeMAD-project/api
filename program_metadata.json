@@ -16,7 +16,7 @@
       "firstPublicationTime" : "?startDateTime"
     },
   "$where": [
-    "?uri ebucore:hasIdentifier ?_identifier",
+    "?uri ebucore:hasIdentifier ?_identifier.",
     "?uri ebucore:hasPublicationHistory / ebucore:hasPublicationEvent ?firstrun.",
     "?firstrun a memad:FirstRun; ebucore:publicationStartDateTime ?startDateTime."
   ],
