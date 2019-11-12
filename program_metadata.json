@@ -2,7 +2,6 @@
   "proto":
     {
       "uri": "?uri$anchor",
-      "identifier" : "$ebucore:hasIdentifier$required$var:_identifier",
       "title" : "$ebucore:title$required",
       "description": "$ebucore:description",
       "episodeNumber" : "$ebucore:episodeNumber",
@@ -17,7 +16,8 @@
       "firstPublicationTime" : "?startDateTime"
     },
   "$where": [
-    "?program ebucore:hasPublicationHistory / ebucore:hasPublicationEvent ?firstrun.",
+    "?uri ebucore:hasIdentifier $_identifier",
+    "?uri ebucore:hasPublicationHistory / ebucore:hasPublicationEvent ?firstrun.",
     "?firstrun a memad:FirstRun; ebucore:publicationStartDateTime ?startDateTime."
   ],
   "$prefixes": {
