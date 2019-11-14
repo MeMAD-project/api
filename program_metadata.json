@@ -2,7 +2,8 @@
   "proto":
     {
       "uri": "?uri$anchor",
-      "identifier" : "$ebucore:hasIdentifier$required$var:_identifier",
+      "filename" : "$ebucore:isInstantiatedBy / ebucore:filename$required$var:_filename",
+      "identifier" : "$ebucore:hasIdentifier",
       "title" : "$ebucore:title$required",
       "description": "$ebucore:description",
       "episodeNumber" : "$ebucore:episodeNumber",
