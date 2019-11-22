@@ -6,6 +6,7 @@
       "identifier" : "$ebucore:hasIdentifier",
       "title" : "$ebucore:title$required",
       "description": "$ebucore:description",
+      "summary": "$ebucore:summary",
       "episodeNumber" : "$ebucore:episodeNumber",
       "tags": "$ebucore:hasKeyword",
       "genre": "$ebucore:hasGenre",
