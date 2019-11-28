@@ -20,8 +20,7 @@
     },
   "$from": "http://data.memad.eu/graph/data",
   "$where": [
-    "?uri ebucore:hasPublicationHistory / ebucore:hasPublicationEvent ?firstrun",
-    "?firstrun a memad:FirstRun; ebucore:publicationStartDateTime ?startDateTime"
+    "OPTIONAL { ?uri ebucore:hasPublicationHistory / ebucore:hasPublicationEvent ?firstrun. ?firstrun a memad:FirstRun; ebucore:publicationStartDateTime ?startDateTime. }"
   ],
   "$prefixes": {
       "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#",
