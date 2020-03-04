@@ -11,9 +11,8 @@
       "id": "?channel",
       "name": "$ebucore:publicationChannelName$required"
     }
-
-
   },
+  "$from": "http://data.memad.eu/graph/data",
   "$where": [
     "?pubevent a ebucore:PublicationEvent",
     "?channel a ebucore:PublicationChannel",
