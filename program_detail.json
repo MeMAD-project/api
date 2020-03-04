@@ -17,7 +17,7 @@
   "$where": [
     "?pubevent a ebucore:PublicationEvent",
     "?channel a ebucore:PublicationChannel",
-    "?pubevent ebucore:hasPublicationStartDateTime ?date",
+    "?pubevent ebucore:hasPublicationStartDateTime | ebucore:publicationStartDateTime ?date",
     "?pubevent ebucore:publishes ?_program_iri; ebucore:isReleasedBy ?channel"
   ],
   "$prefixes": {
