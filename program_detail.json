@@ -12,11 +12,10 @@
       "name": "$ebucore:publicationChannelName$required"
     }
   },
-  "$from": "http://data.memad.eu/graph/data",
   "$where": [
     "?pubevent a ebucore:PublicationEvent",
     "?channel a ebucore:PublicationChannel",
-    "?pubevent ebucore:hasPublicationStartDateTime | ebucore:publicationStartDateTime ?date",
+    "?pubevent ebucore:publicationStartDateTime ?date",
     "?pubevent ebucore:publishes ?_program_iri; ebucore:isReleasedBy ?channel"
   ],
   "$prefixes": {
