@@ -6,17 +6,19 @@
     "genre": "$ebucore:hasGenre",
     "theme": "$ebucore:hasTheme",
     "keyword": "$ebucore:hasKeyword",
-    "date": "?date",
-    "channel": {
-      "id": "?channel",
-      "name": "$ebucore:publicationChannelName$required"
+    "publication": {
+      "id": "?pubevent",
+      "date": "$ebucore:publicationStartDateTime",
+      "channel": {
+        "id": "$ebucore:isReleasedBy",
+        "name": "$ebucore:publicationChannelName$required"
+      }
     }
   },
   "$where": [
     "?pubevent a ebucore:PublicationEvent",
     "?channel a ebucore:PublicationChannel",
-    "?pubevent ebucore:publicationStartDateTime ?date",
-    "?pubevent ebucore:publishes ?_program_iri; ebucore:isReleasedBy ?channel"
+    "?pubevent ebucore:publishes ?_program_iri"
   ],
   "$prefixes": {
     "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
